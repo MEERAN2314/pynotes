@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>My Python Notes - basics</title>
+    <title>Functions</title>
 
     <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/normalize.css" />
     <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/foundation.min.css" />
@@ -42,59 +42,57 @@
 
     <!-- Main Blog Content -->
     <div class="large-9 columns">
-        
-        
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://MEERAN2314.github.io/pynotes/functions.html" rel="bookmark"
+        title="Permalink to Functions">Functions</a></h3>
+    </header>
 
-            <article>
-                <a href="https://MEERAN2314.github.io/pynotes/age-calculator.html"><h3 class="article-title">Age-Calculator</h3></a>
 <h6 class="subheader" title="2025-06-28T00:00:00-04:00">Sat 28 June 2025
 </h6>
 
 
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+    <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Hello, </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">!&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">greet</span><span class="p">(</span><span class="s2">&quot;Alice&quot;</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">power</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">exponent</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">base</span> <span class="o">**</span> <span class="n">exponent</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>     
+<span class="nb">print</span><span class="p">(</span><span class="n">power</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>   
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">sum_all</span><span class="p">(</span><span class="o">*</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">numbers</span><span class="p">:</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">num</span>
+    <span class="k">return</span> <span class="n">total</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sum_all</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>  
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">get_age</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
-    <span class="n">d1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
-    <span class="n">months</span> <span class="o">=</span> <span class="p">(</span><span class="n">d1</span><span class="o">.</span><span class="n">year</span> <span class="o">-</span> <span class="n">d</span><span class="o">.</span><span class="n">year</span><span class="p">)</span> <span class="o">*</span> <span class="mi">12</span> <span class="o">+</span> <span class="n">d1</span><span class="o">.</span><span class="n">month</span> <span class="o">-</span> <span class="n">d</span><span class="o">.</span><span class="n">month</span>
-
-    <span class="n">year</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">months</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">year</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="n">get_age</span><span class="p">(</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1991</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">age</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="mf">33</span>
+<div class="highlight"><pre><span></span><code>Hello, Alice!
+9
+27
+10
 </code></pre></div>
 
 <div class="highlight"><pre><span></span><code>
 </code></pre></div>
 
 <hr>
-<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/basics.html">basics</a>
+<p><strong>Score: 0</strong></p>
+<p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a>
 
 </p>
 
 
 
-            </article>
 
-<div class="pagination-centered">
-<h6 class="subheader">Page 1 of 1</h6>
-
-<p>
-
-</p>
-</div>
-
-
-
-            <!-- /#posts-list -->
-
+</article>
     </div>
     <!-- End Main Content -->
 
