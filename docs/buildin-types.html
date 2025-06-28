@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Buildin-Types</title>
+
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://MEERAN2314.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://MEERAN2314.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://MEERAN2314.github.io/pynotes/buildin-types.html" rel="bookmark"
+        title="Permalink to Buildin-Types">Buildin-Types</a></h3>
+    </header>
+
+<h6 class="subheader" title="2025-06-29T00:00:00-04:00">Sun 29 June 2025
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1">#  Dynamic data</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  which means we dont want to specify a data type when assigning to a variable</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  the change in the value leads to a change in data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">my_var</span> <span class="o">=</span> <span class="s2">&quot;Hi Friends!&quot;</span> <span class="c1"># holding string.</span>
+<span class="n">my_var</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># same variable holding numeric value.</span>
+<span class="n">my_var</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1">#holding a boolean </span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># print(my_var)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="mi">10</span> <span class="c1">#--&gt; string value </span>
+<span class="n">percentage</span> <span class="o">=</span> <span class="mf">80.50</span> <span class="c1"># --&gt; floating value</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">percentage</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">10</span>
+<span class="mf">80.5</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  Int Data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="mi">30</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">10</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">20</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num3</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">30</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num3</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">10</span>
+<span class="mf">20</span>
+<span class="mf">30</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  Floating data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="mf">10.555</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mf">20.99</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">31.544999999999998</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  Complex Data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span><span class="n">j</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mf">3.5</span> <span class="o">+</span> <span class="mf">7.5</span><span class="n">j</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">result</span> <span class="o">=</span> <span class="n">num1</span> <span class="o">+</span> <span class="n">num2</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>(5.5+12.5j)
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  determine the type of variable</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mf">20.50</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num3</span> <span class="o">=</span> <span class="mf">3.5</span> <span class="o">+</span> <span class="mf">7.5</span><span class="n">j</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">num1</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;int&#39;&gt;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">num2</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;float&#39;&gt;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">num3</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;complex&#39;&gt;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">num1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">num2</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">num3</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;int&#39;&gt;
+&lt;class &#39;float&#39;&gt;
+&lt;class &#39;complex&#39;&gt;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">50</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">del</span> <span class="n">num1</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span> <span class="c1"># --&gt; iwll raise error because num1 deleted </span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">---------------------------------------------------------------------------</span>
+
+<span class="c">NameError                                 Traceback (most recent call last)</span>
+
+<span class="c">Cell In</span><span class="k">[</span><span class="c">32</span><span class="k">]</span><span class="nt">,</span><span class="c"> line 1</span>
+<span class="nb">----</span><span class="nv">&gt;</span><span class="c"> 1 print(num1) # </span><span class="nb">--</span><span class="nv">&gt;</span><span class="c"> iwll raise error because num1 deleted</span>
+
+
+<span class="c">NameError: name &#39;num1&#39; is not defined</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Boolean Data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span> <span class="o">&gt;=</span> <span class="mi">4</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="mi">25</span> <span class="o">==</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">18</span> <span class="o">!=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">9</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True True False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># None Data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>None
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;NoneType&#39;&gt;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  String Data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">str1</span> <span class="o">=</span> <span class="s2">&quot;Hello Meeran&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">str2</span> <span class="o">=</span> <span class="s1">&#39;How are you ?&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Hello Meeran
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>How are you ?
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">str1</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;str&#39;&gt;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  List Data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mf">20.50</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>[10, 20.5, &#39;Python&#39;, True]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">list</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;list&#39;&gt;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>[10, 20, 30, 40]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">50</span> 
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num_list</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>[10, 20, 50, 40]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Tuple Data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;Python&quot;</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">10</span><span class="n">j</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>(10, 20, &#39;Python&#39;, (2+10j))
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;tuple&#39;&gt;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Set Data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">50</span><span class="n">j</span><span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{&#39;Hello&#39;, 1, 2, (4+50j)}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;set&#39;&gt;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Dictionary Data type</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span> <span class="p">:</span> <span class="s1">&#39;Orange&#39;</span><span class="p">,</span>
+        <span class="mi">2</span> <span class="p">:</span> <span class="s1">&#39;Apple&#39;</span><span class="p">,</span>
+        <span class="mi">3</span> <span class="p">:</span> <span class="s1">&#39;Banana&#39;</span><span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>{1: &#39;Orange&#39;, 2: &#39;Apple&#39;, 3: &#39;Banana&#39;}
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="nb">dict</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;dict&#39;&gt;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 65</strong></p>
+<p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://MEERAN2314.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/misc.html">misc</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/MEERAN2314/">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by Meeran</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
