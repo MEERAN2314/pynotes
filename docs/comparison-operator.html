@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Comparison-Operator</title>
+
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://MEERAN2314.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://MEERAN2314.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://MEERAN2314.github.io/pynotes/comparison-operator.html" rel="bookmark"
+        title="Permalink to Comparison-Operator">Comparison-Operator</a></h3>
+    </header>
+
+<h6 class="subheader" title="2025-06-29T00:00:00-04:00">Sun 29 June 2025
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1">#  Comparison  Operators</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Equal to (==)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">20</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;My name is John&#39;</span>
+<span class="n">q</span> <span class="o">=</span> <span class="s1">&#39;My name is John&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">p</span> <span class="o">==</span> <span class="n">q</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="s1">&#39;Text&#39;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;text&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">r</span> <span class="o">==</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="n">u</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">t</span> <span class="o">==</span> <span class="n">u</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">List1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">List2</span> <span class="o">=</span> <span class="n">List1</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">List1</span> <span class="o">==</span> <span class="n">List2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mf">50.0</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">50</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;My name is John&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">str2</span> <span class="o">=</span> <span class="n">str1</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">str1</span> <span class="o">==</span> <span class="n">str2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#   Not equal to (!=)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">90</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;My name is John&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">str2</span> <span class="o">=</span> <span class="n">str1</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">str1</span> <span class="o">!=</span> <span class="n">str2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">b</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">a</span> <span class="o">!=</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">q</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">q</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="s1">&#39;50&#39;</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">50</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">r</span> <span class="o">!=</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">50</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span> <span class="n">r</span> <span class="o">!=</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">List1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="s1">&#39;30&#39;</span><span class="p">]</span>
+<span class="n">List2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">List1</span> <span class="o">!=</span> <span class="n">List2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">List1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">List2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s1">&#39;Python&#39;</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">List1</span> <span class="o">!=</span> <span class="n">List2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">Dict1</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span>
+     <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;20&#39;</span>
+<span class="p">}</span>
+<span class="n">Dict2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span>
+    <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;20&#39;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">Dict1</span> <span class="o">!=</span> <span class="n">Dict2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  Greater than (&gt;)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mi">50</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num1</span> <span class="o">&gt;</span> <span class="n">num2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num1</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">-</span> <span class="mi">20</span> <span class="o">&gt;</span> <span class="n">num2</span> <span class="o">+</span> <span class="mi">20</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">n1</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">n2</span> <span class="o">=</span> <span class="n">n1</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">n1</span> <span class="o">&gt;</span> <span class="n">n2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span> <span class="c1"># --&gt; considered by len</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s1">&#39;Pythe&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">str1</span> <span class="o">&gt;</span> <span class="n">str2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span> <span class="c1">#--&gt; different data type will raise a error </span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s1">&#39;20&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">str1</span> <span class="o">&gt;</span> <span class="n">str2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">---------------------------------------------------------------------------</span>
+
+<span class="c">TypeError                                 Traceback (most recent call last)</span>
+
+<span class="c">Cell In</span><span class="k">[</span><span class="c">56</span><span class="k">]</span><span class="nt">,</span><span class="c"> line 1</span>
+<span class="nb">----</span><span class="nv">&gt;</span><span class="c"> 1 print(str1 </span><span class="nv">&gt;</span><span class="c"> str2)</span>
+
+
+<span class="c">TypeError: &#39;</span><span class="nv">&gt;</span><span class="c">&#39; not supported between instances of &#39;str&#39; and &#39;int&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s1">&#39;20&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">str1</span> <span class="o">&gt;</span> <span class="n">str2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">2</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">q</span> <span class="o">&gt;</span> <span class="n">p</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">s</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">r</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">List1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
+<span class="n">List2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">List1</span> <span class="o">&gt;</span> <span class="n">List2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  Less than (&lt;)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mf">20.05</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num1</span> <span class="o">&lt;</span> <span class="n">num2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">exp1</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="mi">20</span> <span class="o">%</span> <span class="mi">20</span>
+<span class="n">exp2</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">/</span> <span class="mi">20</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">exp2</span> <span class="o">&lt;</span> <span class="n">exp1</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">str1</span> <span class="o">=</span> <span class="s1">&#39;Python&#39;</span>
+<span class="n">str2</span> <span class="o">=</span> <span class="s1">&#39;Text&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">str1</span> <span class="o">&lt;</span> <span class="n">str2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">r</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">s</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">r</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">List1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">List2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">List1</span> <span class="o">&lt;</span> <span class="n">List2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Greater than or equal to (&gt;=)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="mf">20.20</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mf">20.0200</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num1</span> <span class="o">&gt;=</span> <span class="n">num2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="kc">True</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="kc">False</span> <span class="o">+</span> <span class="kc">False</span> <span class="o">+</span> <span class="kc">False</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;abcd&#39;</span>
+<span class="n">q</span> <span class="o">=</span> <span class="s1">&#39;abcde&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">p</span> <span class="o">&gt;=</span> <span class="n">q</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  Less than or equal to (&lt;=)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">num1</span> <span class="o">=</span> <span class="mf">40.40</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="mf">40.400</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">num1</span> <span class="o">&lt;=</span> <span class="n">num2</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="kc">True</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="kc">False</span> <span class="o">+</span> <span class="kc">False</span> <span class="o">+</span> <span class="kc">False</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>False
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="s1">&#39;A&#39;</span>
+<span class="n">q</span> <span class="o">=</span> <span class="s1">&#39;B&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">p</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>True
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Use of Comparison Operators in Decision Making Statement</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Program to illustrate the use of comparison or relational operators.</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">==</span> <span class="n">q</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is equal to q&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is not equal to q&quot;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">!=</span> <span class="n">q</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is not equal to q&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is equal to q&quot;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is greater than q&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is not greater than q&quot;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">&lt;</span> <span class="n">q</span><span class="p">):</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is less than q&quot;</span><span class="p">)</span> 
+<span class="k">else</span><span class="p">:</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is not less than q&quot;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">&gt;=</span> <span class="n">q</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is greater than or equal to q&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is not greater than or equal to q&quot;</span><span class="p">)</span>
+<span class="k">if</span><span class="p">(</span><span class="n">p</span> <span class="o">&lt;=</span> <span class="n">q</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is less than or equal to q&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;p is not less than or equal to q&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>p is not equal to q
+p is not equal to q
+p is not greater than q
+p is less than q
+p is not greater than or equal to q
+p is less than or equal to q
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter your age: &quot;</span><span class="p">))</span>
+<span class="k">if</span><span class="p">(</span><span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are eligible for voting.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You are not eligible for voting.&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nv">Enter</span><span class="w"> </span><span class="nv">your</span><span class="w"> </span><span class="nv">age</span>:<span class="w">  </span><span class="mi">20</span>
+
+
+<span class="nv">You</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">eligible</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">voting</span>.
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 90</strong></p>
+<p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://MEERAN2314.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/misc.html">misc</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/MEERAN2314/">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by Meeran</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
