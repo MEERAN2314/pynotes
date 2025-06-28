@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Bitwise-Operator</title>
+
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://MEERAN2314.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://MEERAN2314.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://MEERAN2314.github.io/pynotes/bitwise-operator.html" rel="bookmark"
+        title="Permalink to Bitwise-Operator">Bitwise-Operator</a></h3>
+    </header>
+
+<h6 class="subheader" title="2025-06-29T00:00:00-04:00">Sun 29 June 2025
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1"># Bitwise Operators in Python</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># &amp;     Bitwise AND                 Binary</span>
+<span class="c1"># |     Bitwise OR                  Binary</span>
+<span class="c1"># ^     Bitwise XOR (Exclusive OR)  Binary</span>
+<span class="c1"># ~     Bitwise NOT                 Unary</span>
+<span class="c1"># &lt;&lt;    Bitwise Left Shift          Binary</span>
+<span class="c1"># &gt;&gt;    Bitwise Right Shift         Binary</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Bitwise AND operator (&amp;)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">&amp;</span> <span class="n">B</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (2 &amp; 6): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (2 &amp; 6):  2
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">&amp;</span> <span class="n">B</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (25 &amp; 45): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (25 &amp; 45):  9
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="o">-</span><span class="mi">25</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">&amp;</span> <span class="n">B</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (-25 &amp; 45): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (-25 &amp; 45):  37
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">X</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">X</span> <span class="o">&amp;</span> <span class="n">Y</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (True &amp; 10): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (True &amp; 10):  1
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">P</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">P</span> <span class="o">&amp;</span> <span class="n">Q</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (False &amp; 20): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (False &amp; 20):  0
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Bitwise OR operator (|)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">|</span> <span class="n">B</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (2 | 6): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (2 | 6):  6
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">|</span> <span class="n">B</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (25 | 45): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (25 | 45):  61
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="o">-</span><span class="mi">25</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">|</span> <span class="n">B</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (-25 | 45): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (-25 | 45):  -17
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">X</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">X</span> <span class="o">|</span> <span class="n">Y</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (True | 10): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (True | 10):  45
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">P</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">P</span> <span class="o">|</span> <span class="n">Q</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (False | 20): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (False | 20):  15
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Bitwise XOR operator (^)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">^</span> <span class="n">B</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (A ^ B): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (A ^ B):  4
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">^</span> <span class="n">B</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (25 ^ 45): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (25 ^ 45):  52
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">X</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="mi">45</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">X</span> <span class="o">^</span> <span class="n">Y</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (True ^ 10): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (True ^ 10):  44
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">P</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">Q</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">P</span> <span class="o">^</span> <span class="n">Q</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (False ^ 20): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (False ^ 20):  15
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Bitwise NOT operator (~)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">&lt;&lt;</span> <span class="n">B</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (A &lt;&lt; B): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (A &lt;&lt; B):  6
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">X</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">X</span> <span class="o">&lt;&lt;</span> <span class="n">Y</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (X &lt;&lt; Y): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (X &lt;&lt; Y):  12
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">X</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">X</span> <span class="o">&lt;&lt;</span> <span class="n">Y</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (A &lt;&lt; B): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (A &lt;&lt; B):  100
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Bitwise Right Shift Operator (&gt;&gt;)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">A</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">A</span> <span class="o">&gt;&gt;</span> <span class="n">B</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (A &gt;&gt; B): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (A &gt;&gt; B):  3
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">X</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">X</span> <span class="o">&gt;&gt;</span> <span class="n">Y</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Result of (X &gt;&gt; Y): &quot;</span><span class="p">,</span> <span class="n">result</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Result of (X &gt;&gt; Y):  1
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your first number: &#39;</span><span class="p">))</span>
+<span class="n">q</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your second number: &#39;</span><span class="p">))</span>
+<span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the number of bits to be shifted towards left and right: &#39;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise &amp;: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">&amp;</span> <span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise |: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">|</span> <span class="n">q</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise ^: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">^</span> <span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise ~: &#39;</span><span class="p">,</span> <span class="o">~</span><span class="n">p</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise ~: &#39;</span><span class="p">,</span> <span class="o">~</span><span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise &lt;&lt;: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">;</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise &gt;&gt;: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">&gt;&gt;</span> <span class="n">r</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter your first number:  5
+Enter your second number:  9
+Enter the number of bits to be shifted towards left and right:  2
+
+
+Outcome of bitwise &amp;:  1
+Outcome of bitwise |:  13
+Outcome of bitwise ^:  12
+Outcome of bitwise ~:  -6
+Outcome of bitwise ~:  -10
+Outcome of bitwise &lt;&lt;:  20
+Outcome of bitwise &gt;&gt;:  1
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your first number: &#39;</span><span class="p">))</span>
+<span class="n">q</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your second number: &#39;</span><span class="p">))</span>
+<span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the number of bits to be shifted towards left and right: &#39;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise &amp;: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">&amp;</span> <span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise |: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">|</span> <span class="n">q</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise ^: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">^</span> <span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise ~: &#39;</span><span class="p">,</span> <span class="o">~</span><span class="n">p</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise ~: &#39;</span><span class="p">,</span> <span class="o">~</span><span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise &lt;&lt;: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">;</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise &gt;&gt;: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">&gt;&gt;</span> <span class="n">r</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter your first number:  4
+Enter your second number:  2
+Enter the number of bits to be shifted towards left and right:  9
+
+
+Outcome of bitwise &amp;:  0
+Outcome of bitwise |:  6
+Outcome of bitwise ^:  6
+Outcome of bitwise ~:  -5
+Outcome of bitwise ~:  -3
+Outcome of bitwise &lt;&lt;:  2048
+Outcome of bitwise &gt;&gt;:  0
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">p</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your first number: &#39;</span><span class="p">))</span>
+<span class="n">q</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your second number: &#39;</span><span class="p">))</span>
+<span class="n">r</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the number of bits to be shifted towards left and right: &#39;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise &amp;: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">&amp;</span> <span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise |: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">|</span> <span class="n">q</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise ^: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">^</span> <span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise ~: &#39;</span><span class="p">,</span> <span class="o">~</span><span class="n">p</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise ~: &#39;</span><span class="p">,</span> <span class="o">~</span><span class="n">q</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise &lt;&lt;: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">r</span><span class="p">)</span> <span class="p">;</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Outcome of bitwise &gt;&gt;: &#39;</span><span class="p">,</span> <span class="n">p</span> <span class="o">&gt;&gt;</span> <span class="n">r</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter your first number:  1
+Enter your second number:  10
+Enter the number of bits to be shifted towards left and right:  5
+
+
+Outcome of bitwise &amp;:  0
+Outcome of bitwise |:  11
+Outcome of bitwise ^:  11
+Outcome of bitwise ~:  -2
+Outcome of bitwise ~:  -11
+Outcome of bitwise &lt;&lt;:  32
+Outcome of bitwise &gt;&gt;:  0
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 50</strong></p>
+<p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://MEERAN2314.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/misc.html">misc</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/MEERAN2314/">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by Meeran</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
