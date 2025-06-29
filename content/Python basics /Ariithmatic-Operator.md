@@ -2,8 +2,8 @@
 title: Ariithmatic-Operator
 date: 2025-06-30
 author: Your Name
-cell_count: 51
-score: 50
+cell_count: 119
+score: 115
 ---
 
 ```python
@@ -337,9 +337,767 @@ print("Result: ", z)
 
 
 ```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+    Sum:  50
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+
+      Cell In[36], line 4
+        print("Sum: ", sum) x = 20
+                            ^
+    SyntaxError: invalid syntax
+
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+
+      Cell In[37], line 4
+        print("Sum: ", sum) x = 20
+                            ^
+    SyntaxError: invalid syntax
+
+
+
+
+```python
+
+```
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+x = 20
+y = 30
+sum = x + y 
+print("Sum: ", sum) 
+```
+
+    Sum:  50
+
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
+
+```
+
+
+```python
 
 ```
 
 
 ---
-**Score: 50**
+**Score: 115**

@@ -2,8 +2,8 @@
 title: Buildin-Types
 date: 2025-06-30
 author: Your Name
-cell_count: 69
-score: 65
+cell_count: 99
+score: 95
 ---
 
 ```python
@@ -466,9 +466,390 @@ print(type(dict))
 
 
 ```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+
+      Cell In[12], line 5
+        print("Result of (x = x + y) = ", x)x = 20
+                                            ^
+    SyntaxError: invalid syntax
+
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
 
 ```
 
 
 ---
-**Score: 65**
+**Score: 95**

@@ -2,8 +2,8 @@
 title: Assignment-Operators
 date: 2025-06-30
 author: Your Name
-cell_count: 70
-score: 70
+cell_count: 121
+score: 120
 ---
 
 ```python
@@ -435,9 +435,670 @@ print("Result of (x = x ^ y) = ", x)
 
 
 ```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+v
+```
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    Cell In[28], line 1
+    ----> 1 v
+
+
+    NameError: name 'v' is not defined
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+v
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    Cell In[38], line 1
+    ----> 1 v
+          2 x = 20
+          3 y = 5
+
+
+    NameError: name 'v' is not defined
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+    Result of (x = x + y) =  25
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+    Result of (x = x + y) =  25
+    Result of (x = x + y) =  25
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
+x = 20
+y = 5
+z = 10
+x += y
+print("Result of (x = x + y) = ", x)
+
+
+```
+
+    Result of (x = x + y) =  25
+
+
+
+```python
 
 ```
 
 
 ---
-**Score: 70**
+**Score: 120**
