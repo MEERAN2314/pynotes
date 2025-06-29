@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Escape-Sequennce</title>
+
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://MEERAN2314.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://MEERAN2314.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://MEERAN2314.github.io/pynotes/escape-sequennce.html" rel="bookmark"
+        title="Permalink to Escape-Sequennce">Escape-Sequennce</a></h3>
+    </header>
+
+<h6 class="subheader" title="2025-06-29T00:00:00-04:00">Sun 29 June 2025
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1">#  Escape Sequence in Python</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  error code for escape sequence </span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;he said &#39;python is fun ultimated&#39;&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>he said &#39;python is fun ultimated&#39;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;He said &quot;Python is fun unlimited&quot;&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>He said &quot;Python is fun unlimited&quot;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;He said </span><span class="se">\&#39;</span><span class="s1">Python is fun unlimited</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>He said &#39;Python is fun unlimited&#39;
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to</span><span class="se">\t</span><span class="s2">Scientech Easy&quot;</span><span class="p">)</span> <span class="c1"># --&gt; gives a tab between words</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Welcome to  Scientech Easy
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Good Morning </span><span class="se">\n</span><span class="s2">Scientech Easy&quot;</span><span class="p">)</span>  <span class="c1">#--&gt; breaks one line into two lines </span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Good Morning 
+Scientech Easy
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;*</span><span class="se">\n</span><span class="s2">**</span><span class="se">\n</span><span class="s2">***</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">*</span>
+**
+***
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good Evening </span><span class="se">\\</span><span class="s1">Scientech Easy</span><span class="se">\\</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1">#--&gt; prints the text with backslash</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Good Evening \Scientech Easy\
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Good Morning </span><span class="se">\r</span><span class="s1">Scientech Easy&#39;</span><span class="p">)</span> <span class="c1"># --&gt; moves the output means it will not print the string before \r</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Scientech Easy
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">emp_code</span> <span class="o">=</span> <span class="s2">&quot;IT-35264&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Jerin&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">desig</span> <span class="o">=</span> <span class="s2">&quot;Jr. Python Developer&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">comp</span> <span class="o">=</span> <span class="s2">&quot;tact&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">salary</span> <span class="o">=</span> <span class="s2">&quot;USD 40000&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Employee code: &quot;</span><span class="p">,</span> <span class="n">emp_code</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Name: &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Employee code:  IT-35264 
+Name:  Jerin
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Designation: &quot;</span><span class="p">,</span><span class="n">desig</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Company: &quot;</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">Designation</span><span class="o">:</span><span class="w">  </span><span class="n">Jr</span><span class="o">.</span><span class="w"> </span><span class="n">Python</span><span class="w"> </span><span class="n">Developer</span><span class="w">  </span><span class="n">Company</span><span class="o">:</span><span class="w">  </span><span class="n">tact</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Annual Salary: &quot;</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Annual Salary:  USD 40000
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Employee code: &quot;</span><span class="p">,</span> <span class="n">emp_code</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Name: &quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Designation: &quot;</span><span class="p">,</span><span class="n">desig</span><span class="p">,</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">Company: &quot;</span><span class="p">,</span> <span class="n">comp</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Annual Salary: &quot;</span><span class="p">,</span> <span class="n">salary</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Employee code:  IT-35264 
+Name:  Jerin
+Designation:  Jr. Python Developer  Company:  tact
+Annual Salary:  USD 40000
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 20</strong></p>
+<p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://MEERAN2314.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/misc.html">misc</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/MEERAN2314/">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by Meeran</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
