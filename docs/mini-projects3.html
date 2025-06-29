@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Mini-Projects#3</title>
+
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://MEERAN2314.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://MEERAN2314.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://MEERAN2314.github.io/pynotes/mini-projects3.html" rel="bookmark"
+        title="Permalink to Mini-Projects#3">Mini-Projects#3</a></h3>
+    </header>
+
+<h6 class="subheader" title="2025-06-29T00:00:00-04:00">Sun 29 June 2025
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1"># Mad Libs Generator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Mad Libs - Fill in the blanks story generator</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to Mad Libs!&quot;</span><span class="p">)</span>
+<span class="n">noun</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a noun: &quot;</span><span class="p">)</span>
+<span class="n">verb</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a verb: &quot;</span><span class="p">)</span>
+<span class="n">adjective</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an adjective: &quot;</span><span class="p">)</span>
+<span class="n">place</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a place: &quot;</span><span class="p">)</span>
+
+<span class="n">story</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Yesterday, I saw a </span><span class="si">{</span><span class="n">adjective</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">noun</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">verb</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">place</span><span class="si">}</span><span class="s2">. It was amazing!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Your Mad Lib:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">story</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Welcome to Mad Libs!
+
+
+Enter a noun:  car
+Enter a verb:  at
+Enter an adjective:  intersting
+Enter a place:  beach
+
+
+
+Your Mad Lib:
+Yesterday, I saw a intersting car at at beach. It was amazing!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Mad Libs - Fill in the blanks story generator</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Welcome to Mad Libs!&quot;</span><span class="p">)</span>
+<span class="n">noun</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a noun: &quot;</span><span class="p">)</span>
+<span class="n">verb</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a verb: &quot;</span><span class="p">)</span>
+<span class="n">adjective</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter an adjective: &quot;</span><span class="p">)</span>
+<span class="n">place</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a place: &quot;</span><span class="p">)</span>
+
+<span class="n">story</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Yesterday, I saw a </span><span class="si">{</span><span class="n">adjective</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">noun</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">verb</span><span class="si">}</span><span class="s2"> at </span><span class="si">{</span><span class="n">place</span><span class="si">}</span><span class="s2">. It was amazing!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Your Mad Lib:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">story</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Welcome to Mad Libs!
+
+
+Enter a noun:  ball
+Enter a verb:  is
+Enter an adjective:  forgot
+Enter a place:  park
+
+
+
+Your Mad Lib:
+Yesterday, I saw a forgot ball is at park. It was amazing!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Rock-Paper-Scissors Game</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="s2">&quot;scissors&quot;</span><span class="p">]</span>
+<span class="n">user</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose (rock/paper/scissors): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You: </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="se">\n</span><span class="s2">Computer: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tie!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computer wins!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Choose (rock/paper/scissors):  rock
+
+
+
+You: rock
+Computer: paper
+Computer wins!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="s2">&quot;scissors&quot;</span><span class="p">]</span>
+<span class="n">user</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose (rock/paper/scissors): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You: </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="se">\n</span><span class="s2">Computer: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tie!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computer wins!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Choose (rock/paper/scissors):  scissors
+
+
+
+You: scissors
+Computer: scissors
+Tie!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="s2">&quot;scissors&quot;</span><span class="p">]</span>
+<span class="n">user</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose (rock/paper/scissors): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You: </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="se">\n</span><span class="s2">Computer: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tie!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computer wins!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Choose (rock/paper/scissors):  paper
+
+
+
+You: paper
+Computer: rock
+You win!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="s2">&quot;scissors&quot;</span><span class="p">]</span>
+<span class="n">user</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose (rock/paper/scissors): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You: </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="se">\n</span><span class="s2">Computer: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tie!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computer wins!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Choose (rock/paper/scissors):  paper
+
+
+
+You: paper
+Computer: scissors
+Computer wins!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="s2">&quot;scissors&quot;</span><span class="p">]</span>
+<span class="n">user</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose (rock/paper/scissors): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You: </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="se">\n</span><span class="s2">Computer: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tie!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computer wins!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Choose (rock/paper/scissors):  paper
+
+
+
+You: paper
+Computer: paper
+Tie!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="s2">&quot;scissors&quot;</span><span class="p">]</span>
+<span class="n">user</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose (rock/paper/scissors): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You: </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="se">\n</span><span class="s2">Computer: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tie!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computer wins!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Choose (rock/paper/scissors):  paper
+
+
+
+You: paper
+Computer: paper
+Tie!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="s2">&quot;scissors&quot;</span><span class="p">]</span>
+<span class="n">user</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose (rock/paper/scissors): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You: </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="se">\n</span><span class="s2">Computer: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tie!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computer wins!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Choose (rock/paper/scissors):  paper
+
+
+
+You: paper
+Computer: scissors
+Computer wins!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">choices</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;rock&quot;</span><span class="p">,</span> <span class="s2">&quot;paper&quot;</span><span class="p">,</span> <span class="s2">&quot;scissors&quot;</span><span class="p">]</span>
+<span class="n">user</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose (rock/paper/scissors): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="n">computer</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">choices</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">You: </span><span class="si">{</span><span class="n">user</span><span class="si">}</span><span class="se">\n</span><span class="s2">Computer: </span><span class="si">{</span><span class="n">computer</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="n">computer</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tie!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;rock&quot;</span><span class="p">)</span> <span class="ow">or</span> \
+     <span class="p">(</span><span class="n">user</span> <span class="o">==</span> <span class="s2">&quot;scissors&quot;</span> <span class="ow">and</span> <span class="n">computer</span> <span class="o">==</span> <span class="s2">&quot;paper&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You win!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Computer wins!&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Choose (rock/paper/scissors):  rock
+
+
+
+You: rock
+Computer: scissors
+You win!
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">#  Fibonacci Sequence Generator </span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate Fibonacci sequence up to n terms&quot;&quot;&quot;</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sequence</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">sequence</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">sequence</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+
+<span class="n">terms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many Fibonacci terms? &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First </span><span class="si">{</span><span class="n">terms</span><span class="si">}</span><span class="s2"> terms:&quot;</span><span class="p">,</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">terms</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>How many Fibonacci terms?  12
+
+
+First 12 terms: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate Fibonacci sequence up to n terms&quot;&quot;&quot;</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sequence</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">sequence</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">sequence</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+
+<span class="n">terms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many Fibonacci terms? &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First </span><span class="si">{</span><span class="n">terms</span><span class="si">}</span><span class="s2"> terms:&quot;</span><span class="p">,</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">terms</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>How many Fibonacci terms?  50
+
+
+First 50 terms: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, 14930352, 24157817, 39088169, 63245986, 102334155, 165580141, 267914296, 433494437, 701408733, 1134903170, 1836311903, 2971215073, 4807526976, 7778742049]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate Fibonacci sequence up to n terms&quot;&quot;&quot;</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sequence</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">sequence</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">sequence</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+
+<span class="n">terms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many Fibonacci terms? &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First </span><span class="si">{</span><span class="n">terms</span><span class="si">}</span><span class="s2"> terms:&quot;</span><span class="p">,</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">terms</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>How many Fibonacci terms?  99
+
+
+First 99 terms: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811, 514229, 832040, 1346269, 2178309, 3524578, 5702887, 9227465, 14930352, 24157817, 39088169, 63245986, 102334155, 165580141, 267914296, 433494437, 701408733, 1134903170, 1836311903, 2971215073, 4807526976, 7778742049, 12586269025, 20365011074, 32951280099, 53316291173, 86267571272, 139583862445, 225851433717, 365435296162, 591286729879, 956722026041, 1548008755920, 2504730781961, 4052739537881, 6557470319842, 10610209857723, 17167680177565, 27777890035288, 44945570212853, 72723460248141, 117669030460994, 190392490709135, 308061521170129, 498454011879264, 806515533049393, 1304969544928657, 2111485077978050, 3416454622906707, 5527939700884757, 8944394323791464, 14472334024676221, 23416728348467685, 37889062373143906, 61305790721611591, 99194853094755497, 160500643816367088, 259695496911122585, 420196140727489673, 679891637638612258, 1100087778366101931, 1779979416004714189, 2880067194370816120, 4660046610375530309, 7540113804746346429, 12200160415121876738, 19740274219868223167, 31940434634990099905, 51680708854858323072, 83621143489848422977, 135301852344706746049]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">fibonacci</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate Fibonacci sequence up to n terms&quot;&quot;&quot;</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">sequence</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
+        <span class="n">sequence</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sequence</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">sequence</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">sequence</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+
+<span class="n">terms</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;How many Fibonacci terms? &quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;First </span><span class="si">{</span><span class="n">terms</span><span class="si">}</span><span class="s2"> terms:&quot;</span><span class="p">,</span> <span class="n">fibonacci</span><span class="p">(</span><span class="n">terms</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>How many Fibonacci terms?  3
+
+
+First 3 terms: [0, 1, 1]
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Palindrome Checker </span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_palindrome</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if word reads the same forwards and backwards&quot;&quot;&quot;</span>
+    <span class="n">cleaned</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cleaned</span> <span class="o">==</span> <span class="n">cleaned</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a word/phrase: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&#39; is </span><span class="si">{</span><span class="s1">&#39;a palindrome&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_palindrome</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;not a palindrome&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter a word/phrase:  hello meeran
+
+
+&#39;hello meeran&#39; is not a palindrome
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_palindrome</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if word reads the same forwards and backwards&quot;&quot;&quot;</span>
+    <span class="n">cleaned</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cleaned</span> <span class="o">==</span> <span class="n">cleaned</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a word/phrase: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&#39; is </span><span class="si">{</span><span class="s1">&#39;a palindrome&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_palindrome</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;not a palindrome&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter a word/phrase:  markram
+
+
+&#39;markram&#39; is a palindrome
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">is_palindrome</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if word reads the same forwards and backwards&quot;&quot;&quot;</span>
+    <span class="n">cleaned</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cleaned</span> <span class="o">==</span> <span class="n">cleaned</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">text</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a word/phrase: &quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;</span><span class="si">{</span><span class="n">text</span><span class="si">}</span><span class="s2">&#39; is </span><span class="si">{</span><span class="s1">&#39;a palindrome&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">is_palindrome</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="s1">&#39;not a palindrome&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter a word/phrase:  fool
+
+
+&#39;fool&#39; is not a palindrome
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Currency Converter (Using Fixed Rates)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">rates</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;USD&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;EUR&#39;</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span> <span class="s1">&#39;GBP&#39;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s1">&#39;JPY&#39;</span><span class="p">:</span> <span class="mf">110.0</span><span class="p">}</span>
+
+<span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter amount: &quot;</span><span class="p">))</span>
+<span class="n">from_curr</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;From currency (USD/EUR/GBP/JPY): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">to_curr</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;To currency (USD/EUR/GBP/JPY): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">amount</span> <span class="o">*</span> <span class="n">rates</span><span class="p">[</span><span class="n">to_curr</span><span class="p">]</span> <span class="o">/</span> <span class="n">rates</span><span class="p">[</span><span class="n">from_curr</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">amount</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">from_curr</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">result</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">to_curr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter amount:  450
+From currency (USD/EUR/GBP/JPY):  USD
+To currency (USD/EUR/GBP/JPY):  EUR
+
+
+450.0 USD = 382.50 EUR
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">rates</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;USD&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;EUR&#39;</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span> <span class="s1">&#39;GBP&#39;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s1">&#39;JPY&#39;</span><span class="p">:</span> <span class="mf">110.0</span><span class="p">}</span>
+
+<span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter amount: &quot;</span><span class="p">))</span>
+<span class="n">from_curr</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;From currency (USD/EUR/GBP/JPY): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">to_curr</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;To currency (USD/EUR/GBP/JPY): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">amount</span> <span class="o">*</span> <span class="n">rates</span><span class="p">[</span><span class="n">to_curr</span><span class="p">]</span> <span class="o">/</span> <span class="n">rates</span><span class="p">[</span><span class="n">from_curr</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">amount</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">from_curr</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">result</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">to_curr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter amount:  2
+From currency (USD/EUR/GBP/JPY):  EUR
+To currency (USD/EUR/GBP/JPY):  GBP
+
+
+2.0 EUR = 1.76 GBP
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="n">rates</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;USD&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span> <span class="s1">&#39;EUR&#39;</span><span class="p">:</span> <span class="mf">0.85</span><span class="p">,</span> <span class="s1">&#39;GBP&#39;</span><span class="p">:</span> <span class="mf">0.75</span><span class="p">,</span> <span class="s1">&#39;JPY&#39;</span><span class="p">:</span> <span class="mf">110.0</span><span class="p">}</span>
+
+<span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter amount: &quot;</span><span class="p">))</span>
+<span class="n">from_curr</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;From currency (USD/EUR/GBP/JPY): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="n">to_curr</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;To currency (USD/EUR/GBP/JPY): &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">amount</span> <span class="o">*</span> <span class="n">rates</span><span class="p">[</span><span class="n">to_curr</span><span class="p">]</span> <span class="o">/</span> <span class="n">rates</span><span class="p">[</span><span class="n">from_curr</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">amount</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">from_curr</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">result</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">to_curr</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter amount:  44
+From currency (USD/EUR/GBP/JPY):  JPY
+To currency (USD/EUR/GBP/JPY):  USD
+
+
+44.0 JPY = 0.40 USD
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 25</strong></p>
+<p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://MEERAN2314.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/misc.html">misc</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/MEERAN2314/">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by Meeran</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>

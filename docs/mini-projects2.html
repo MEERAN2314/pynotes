@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Mini-Projects#2</title>
+
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://MEERAN2314.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://MEERAN2314.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://MEERAN2314.github.io/pynotes/mini-projects2.html" rel="bookmark"
+        title="Permalink to Mini-Projects#2">Mini-Projects#2</a></h3>
+    </header>
+
+<h6 class="subheader" title="2025-06-29T00:00:00-04:00">Sun 29 June 2025
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="c1">#  Basic Hangman Game</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;jupyter&quot;</span><span class="p">,</span> <span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="s2">&quot;programming&quot;</span><span class="p">]</span>
+<span class="n">word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="n">guessed</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">tries</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="k">while</span> <span class="n">tries</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s2">&quot;_&quot;</span> <span class="ow">in</span> <span class="n">guessed</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">guessed</span><span class="p">))</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Guess a letter: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">guess</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="n">guess</span><span class="p">:</span>
+                <span class="n">guessed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">guess</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tries</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wrong! </span><span class="si">{</span><span class="n">tries</span><span class="si">}</span><span class="s2"> tries left.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You won!&quot;</span> <span class="k">if</span> <span class="s2">&quot;_&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">guessed</span> <span class="k">else</span> <span class="s2">&quot;You lost! Word was: &quot;</span> <span class="o">+</span> <span class="n">word</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>_ <span class="ge">_ _</span> _ <span class="ge">_ _</span>
+
+
+Guess a letter:  notebook
+
+
+Wrong! 5 tries left.
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> _
+
+
+Guess a letter:  jupyter
+
+
+Wrong! 4 tries left.
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> _
+
+
+Guess a letter:  python
+
+
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> _
+
+
+Guess a letter:  programming
+
+
+Wrong! 3 tries left.
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> _
+
+
+Guess a letter:  python
+
+
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> _
+
+
+Guess a letter:  jupyter
+
+
+Wrong! 2 tries left.
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> _
+
+
+Guess a letter:  jupyter
+
+
+Wrong! 1 tries left.
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> _
+
+
+Guess a letter:  jupyter
+
+
+Wrong! 0 tries left.
+You lost! Word was: python
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="n">words</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span> <span class="s2">&quot;jupyter&quot;</span><span class="p">,</span> <span class="s2">&quot;notebook&quot;</span><span class="p">,</span> <span class="s2">&quot;programming&quot;</span><span class="p">]</span>
+<span class="n">word</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">words</span><span class="p">)</span>
+<span class="n">guessed</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;_&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="n">tries</span> <span class="o">=</span> <span class="mi">6</span>
+
+<span class="k">while</span> <span class="n">tries</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="s2">&quot;_&quot;</span> <span class="ow">in</span> <span class="n">guessed</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">guessed</span><span class="p">))</span>
+    <span class="n">guess</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Guess a letter: &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+    <span class="k">if</span> <span class="n">guess</span> <span class="ow">in</span> <span class="n">word</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">letter</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">letter</span> <span class="o">==</span> <span class="n">guess</span><span class="p">:</span>
+                <span class="n">guessed</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">guess</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">tries</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wrong! </span><span class="si">{</span><span class="n">tries</span><span class="si">}</span><span class="s2"> tries left.&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You won!&quot;</span> <span class="k">if</span> <span class="s2">&quot;_&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">guessed</span> <span class="k">else</span> <span class="s2">&quot;You lost! Word was: &quot;</span> <span class="o">+</span> <span class="n">word</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>_ <span class="ge">_ _</span> _ <span class="ge">_ _</span> _ <span class="ge">_ _</span> _ <span class="ge">_</span>
+
+
+<span class="ge">Guess a letter:  sd</span>
+
+
+<span class="ge">Wrong! 5 tries left.</span>
+<span class="ge">_</span> _ <span class="ge">_ _</span> _ <span class="ge">_ _</span> _ <span class="ge">_ _</span> _
+
+
+Guess a letter:  sd
+
+
+Wrong! 4 tries left.
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> _ <span class="ge">_ _</span> _ <span class="ge">_ _</span>
+
+
+Guess a letter:  a
+
+
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> a <span class="ge">_ _</span> _ <span class="ge">_ _</span>
+
+
+Guess a letter:  w
+
+
+Wrong! 3 tries left.
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> a <span class="ge">_ _</span> _ <span class="ge">_ _</span>
+
+
+Guess a letter:  t
+
+
+Wrong! 2 tries left.
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> a <span class="ge">_ _</span> _ <span class="ge">_ _</span>
+
+
+Guess a letter:  yt
+
+
+Wrong! 1 tries left.
+<span class="ge">_ _</span> _ <span class="ge">_ _</span> a <span class="ge">_ _</span> _ <span class="ge">_ _</span>
+
+
+Guess a letter:  python
+
+
+Wrong! 0 tries left.
+You lost! Word was: programming
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Temperature Converter</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">temp_converter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Celsius to Fahrenheit&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Fahrenheit to Celsius&quot;</span><span class="p">)</span>
+    <span class="n">choice</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose conversion (1/2): &quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Celsius: &quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">°C = </span><span class="si">{</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">32</span><span class="si">}</span><span class="s2">°F&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Fahrenheit: &quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2">°F = </span><span class="si">{</span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+
+<span class="n">temp_converter</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">Fahrenheit</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">Celsius</span>
+
+
+<span class="n">Choose</span><span class="w"> </span><span class="n">conversion</span><span class="w"> </span><span class="p">(</span><span class="mf">1</span><span class="o">/</span><span class="mf">2</span><span class="p">):</span><span class="w">  </span><span class="mf">1</span>
+<span class="n">Enter</span><span class="w"> </span><span class="n">Celsius</span><span class="p">:</span><span class="w">  </span><span class="mf">30</span>
+
+
+<span class="mf">30.0</span><span class="err">°</span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">86.0</span><span class="err">°</span><span class="n">F</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">temp_converter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Celsius to Fahrenheit&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Fahrenheit to Celsius&quot;</span><span class="p">)</span>
+    <span class="n">choice</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose conversion (1/2): &quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Celsius: &quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">°C = </span><span class="si">{</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">32</span><span class="si">}</span><span class="s2">°F&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Fahrenheit: &quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2">°F = </span><span class="si">{</span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+
+<span class="n">temp_converter</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">Fahrenheit</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">Celsius</span>
+
+
+<span class="n">Choose</span><span class="w"> </span><span class="n">conversion</span><span class="w"> </span><span class="p">(</span><span class="mf">1</span><span class="o">/</span><span class="mf">2</span><span class="p">):</span><span class="w">  </span><span class="mf">2</span>
+<span class="n">Enter</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="p">:</span><span class="w">  </span><span class="mf">120</span>
+
+
+<span class="mf">120.0</span><span class="err">°</span><span class="n">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">48.888888888888886</span><span class="err">°</span><span class="n">C</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">temp_converter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Celsius to Fahrenheit&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Fahrenheit to Celsius&quot;</span><span class="p">)</span>
+    <span class="n">choice</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose conversion (1/2): &quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Celsius: &quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">°C = </span><span class="si">{</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">32</span><span class="si">}</span><span class="s2">°F&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Fahrenheit: &quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2">°F = </span><span class="si">{</span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+
+<span class="n">temp_converter</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">Fahrenheit</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">Celsius</span>
+
+
+<span class="n">Choose</span><span class="w"> </span><span class="n">conversion</span><span class="w"> </span><span class="p">(</span><span class="mf">1</span><span class="o">/</span><span class="mf">2</span><span class="p">):</span><span class="w">  </span><span class="mf">1</span>
+<span class="n">Enter</span><span class="w"> </span><span class="n">Celsius</span><span class="p">:</span><span class="w">  </span><span class="mf">54</span>
+
+
+<span class="mf">54.0</span><span class="err">°</span><span class="n">C</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">129.2</span><span class="err">°</span><span class="n">F</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">temp_converter</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Celsius to Fahrenheit&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Fahrenheit to Celsius&quot;</span><span class="p">)</span>
+    <span class="n">choice</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choose conversion (1/2): &quot;</span><span class="p">))</span>
+
+    <span class="k">if</span> <span class="n">choice</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Celsius: &quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">c</span><span class="si">}</span><span class="s2">°C = </span><span class="si">{</span><span class="p">(</span><span class="n">c</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">9</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">32</span><span class="si">}</span><span class="s2">°F&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">f</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter Fahrenheit: &quot;</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">f</span><span class="si">}</span><span class="s2">°F = </span><span class="si">{</span><span class="p">(</span><span class="n">f</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="o">/</span><span class="mi">9</span><span class="si">}</span><span class="s2">°C&quot;</span><span class="p">)</span>
+
+<span class="n">temp_converter</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="mf">1.</span><span class="w"> </span><span class="n">Celsius</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">Fahrenheit</span>
+<span class="mf">2.</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="w"> </span><span class="kr">to</span><span class="w"> </span><span class="n">Celsius</span>
+
+
+<span class="n">Choose</span><span class="w"> </span><span class="n">conversion</span><span class="w"> </span><span class="p">(</span><span class="mf">1</span><span class="o">/</span><span class="mf">2</span><span class="p">):</span><span class="w">  </span><span class="mf">2</span>
+<span class="n">Enter</span><span class="w"> </span><span class="n">Fahrenheit</span><span class="p">:</span><span class="w">  </span><span class="mf">99</span>
+
+
+<span class="mf">99.0</span><span class="err">°</span><span class="n">F</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">37.22222222222222</span><span class="err">°</span><span class="n">C</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Basic Web Scraper</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://example.com&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Page Title:&quot;</span><span class="p">,</span> <span class="n">soup</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All links:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Page Title: Example Domain
+
+All links:
+https://www.iana.org/domains/example
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://example.com&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Page Title:&quot;</span><span class="p">,</span> <span class="n">soup</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All links:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Page Title: Example Domain
+
+All links:
+https://www.iana.org/domains/example
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://example.com&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Page Title:&quot;</span><span class="p">,</span> <span class="n">soup</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All links:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Page Title: Example Domain
+
+All links:
+https://www.iana.org/domains/example
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://example.com&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Page Title:&quot;</span><span class="p">,</span> <span class="n">soup</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All links:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Page Title: Example Domain
+
+All links:
+https://www.iana.org/domains/example
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://example.com&quot;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Page Title:&quot;</span><span class="p">,</span> <span class="n">soup</span><span class="o">.</span><span class="n">title</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">All links:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">link</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Page Title: Example Domain
+
+All links:
+https://www.iana.org/domains/example
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># Dice Rolling Simulator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">roll_dice</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You rolled:&quot;</span><span class="p">,</span> <span class="n">roll_dice</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Roll again? (y/n) &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>You rolled: 1
+
+
+Roll again? (y/n)  y
+
+
+You rolled: 3
+
+
+Roll again? (y/n)  n
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">roll_dice</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You rolled:&quot;</span><span class="p">,</span> <span class="n">roll_dice</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Roll again? (y/n) &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>You rolled: 1
+
+
+Roll again? (y/n)  n
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">roll_dice</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You rolled:&quot;</span><span class="p">,</span> <span class="n">roll_dice</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Roll again? (y/n) &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>You rolled: 5
+
+
+Roll again? (y/n)  n
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">roll_dice</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You rolled:&quot;</span><span class="p">,</span> <span class="n">roll_dice</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Roll again? (y/n) &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>You rolled: 2
+
+
+Roll again? (y/n)  n
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">roll_dice</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You rolled:&quot;</span><span class="p">,</span> <span class="n">roll_dice</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Roll again? (y/n) &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>You rolled: 1
+
+
+Roll again? (y/n)  y
+
+
+You rolled: 6
+
+
+Roll again? (y/n)  n
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">randomy</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">roll_dice</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;You rolled:&quot;</span><span class="p">,</span> <span class="n">roll_dice</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Roll again? (y/n) &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">!=</span> <span class="s1">&#39;y&#39;</span><span class="p">:</span>
+        <span class="k">break</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>You rolled: 3
+
+
+Roll again? (y/n)  y
+
+
+You rolled: 5
+
+
+Roll again? (y/n)  y
+
+
+You rolled: 5
+
+
+Roll again? (y/n)  y
+
+
+You rolled: 2
+
+
+Roll again? (y/n)  y
+
+
+You rolled: 2
+
+
+Roll again? (y/n)  y
+
+
+You rolled: 4
+
+
+Roll again? (y/n)  y
+
+
+You rolled: 1
+
+
+Roll again? (y/n)  n
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1"># BMI Calculator</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">calculate_bmi</span><span class="p">():</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter weight (kg): &quot;</span><span class="p">))</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter height (m): &quot;</span><span class="p">))</span>
+    <span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your BMI: </span><span class="si">{</span><span class="n">bmi</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">18.5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Underweight&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="mf">18.5</span> <span class="o">&lt;=</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Normal weight&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Overweight&quot;</span><span class="p">)</span>
+
+<span class="n">calculate_bmi</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter weight (kg):  45
+Enter height (m):  180
+
+
+Your BMI: 0.0
+Underweight
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">calculate_bmi</span><span class="p">():</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter weight (kg): &quot;</span><span class="p">))</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter height (m): &quot;</span><span class="p">))</span>
+    <span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your BMI: </span><span class="si">{</span><span class="n">bmi</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">18.5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Underweight&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="mf">18.5</span> <span class="o">&lt;=</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Normal weight&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Overweight&quot;</span><span class="p">)</span>
+
+<span class="n">calculate_bmi</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter weight (kg):  61
+Enter height (m):  180
+
+
+Your BMI: 0.0
+Underweight
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">calculate_bmi</span><span class="p">():</span>
+    <span class="n">weight</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter weight (kg): &quot;</span><span class="p">))</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter height (m): &quot;</span><span class="p">))</span>
+    <span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Your BMI: </span><span class="si">{</span><span class="n">bmi</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">18.5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Underweight&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="mf">18.5</span> <span class="o">&lt;=</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Normal weight&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Overweight&quot;</span><span class="p">)</span>
+
+<span class="n">calculate_bmi</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>Enter weight (kg):  100
+Enter height (m):  140
+
+
+Your BMI: 0.0
+Underweight
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 25</strong></p>
+<p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://MEERAN2314.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/misc.html">misc</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/MEERAN2314/">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by Meeran</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
