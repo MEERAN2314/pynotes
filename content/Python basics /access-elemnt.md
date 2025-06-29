@@ -2,8 +2,8 @@
 title: Access-Elemnt
 date: 2025-06-29
 author: Your Name
-cell_count: 110
-score: 110
+cell_count: 147
+score: 145
 ---
 
 ```python
@@ -7047,9 +7047,611 @@ obj200.display()
 
 
 ```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+v
+```
+
+    Sample1 Value: 22
+
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    Cell In[9], line 8
+          6 obj1 = Sample1(22)
+          7 obj1.display()
+    ----> 8 v
+
+
+    NameError: name 'v' is not defined
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+v
+
+```
+
+    Sample1 Value: 22
+    Sample1 Value: 22
+    Sample1 Value: 22
+
+
+
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    Cell In[23], line 22
+         20 obj1 = Sample1(22)
+         21 obj1.display()
+    ---> 22 v
+
+
+    NameError: name 'v' is not defined
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+```
+
+    Sample1 Value: 22
+
+
+
+```python
+vclass Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+class Sample1:
+    def __init__(self, value):
+        self.value = value
+    def display(self):
+        print(f'Sample1 Value:', self.value)
+obj1 = Sample1(22)
+obj1.display()
+
+```
+
+
+      Cell In[38], line 1
+        vclass Sample1:
+               ^
+    SyntaxError: invalid syntax
+
+
+
+
+```python
 
 ```
 
 
 ---
-**Score: 110**
+**Score: 145**
