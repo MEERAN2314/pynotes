@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Mcp Server</title>
+
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://MEERAN2314.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://MEERAN2314.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://MEERAN2314.github.io/pynotes/mcp-server.html" rel="bookmark"
+        title="Permalink to Mcp Server">Mcp Server</a></h3>
+    </header>
+
+<h6 class="subheader" title="2025-06-30T00:00:00-04:00">Mon 30 June 2025
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Flask</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">flask_cors</span><span class="w"> </span><span class="kn">import</span> <span class="n">CORS</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pymongo</span><span class="w"> </span><span class="kn">import</span> <span class="n">MongoClient</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">CORS</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+
+<span class="c1"># MongoDB connection</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;MONGODB_URI&quot;</span><span class="p">),</span>
+    <span class="n">serverSelectionTimeoutMS</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span>  <span class="c1"># 5 second timeout</span>
+    <span class="n">socketTimeoutMS</span><span class="o">=</span><span class="mi">30000</span><span class="p">,</span>  <span class="c1"># 30 second socket timeout</span>
+    <span class="n">connectTimeoutMS</span><span class="o">=</span><span class="mi">30000</span>  <span class="c1"># 30 second connection timeout</span>
+<span class="p">)</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;DB_NAME&quot;</span><span class="p">)]</span>
+<span class="n">comments_collection</span> <span class="o">=</span> <span class="n">db</span><span class="p">[</span><span class="s1">&#39;song_comments&#39;</span><span class="p">]</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/store_comments&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">store_comments</span><span class="p">():</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">json</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">comments_collection</span><span class="o">.</span><span class="n">insert_many</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;comments&#39;</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;inserted_ids&quot;</span><span class="p">:</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">inserted_ids</span><span class="p">)</span>
+        <span class="p">}),</span> <span class="mi">200</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="p">}),</span> <span class="mi">500</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/get_comments&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">])</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_comments</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">song_id</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;song_id&#39;</span><span class="p">)</span>
+        <span class="n">limit</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;limit&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+        <span class="n">sort_by</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">args</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;sort_by&#39;</span><span class="p">,</span> <span class="s1">&#39;rating&#39;</span><span class="p">)</span>
+
+        <span class="n">query</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;song_id&quot;</span><span class="p">:</span> <span class="n">song_id</span><span class="p">}</span>
+        <span class="n">comments</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">comments_collection</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;_id&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">}))</span>
+
+        <span class="c1"># Sort comments</span>
+        <span class="k">if</span> <span class="n">sort_by</span> <span class="o">==</span> <span class="s1">&#39;rating&#39;</span><span class="p">:</span>
+            <span class="n">comments</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">sort_by</span> <span class="o">==</span> <span class="s1">&#39;positive&#39;</span><span class="p">:</span>
+            <span class="n">comments</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">sort_by</span> <span class="o">==</span> <span class="s1">&#39;negative&#39;</span><span class="p">:</span>
+            <span class="n">comments</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">])</span>
+
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;success&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;comments&quot;</span><span class="p">:</span> <span class="n">comments</span><span class="p">[:</span><span class="n">limit</span><span class="p">]</span>
+        <span class="p">}),</span> <span class="mi">200</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;error&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="p">}),</span> <span class="mi">500</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;0.0.0.0&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="c1">---------------------------------------------------------------------------</span>
+
+<span class="n">TypeError</span><span class="w">                                 </span><span class="n">Traceback</span><span class="w"> </span><span class="p">(</span><span class="n">most</span><span class="w"> </span><span class="n">recent</span><span class="w"> </span><span class="k">call</span><span class="w"> </span><span class="k">last</span><span class="p">)</span>
+
+<span class="n">Cell</span><span class="w"> </span><span class="ow">In</span><span class="o">[</span><span class="n">6</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="mi">19</span>
+<span class="w">     </span><span class="mi">12</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="n">MongoDB</span><span class="w"> </span><span class="k">connection</span>
+<span class="w">     </span><span class="mi">13</span><span class="w"> </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MongoClient</span><span class="p">(</span>
+<span class="w">     </span><span class="mi">14</span><span class="w">     </span><span class="n">os</span><span class="p">.</span><span class="n">getenv</span><span class="p">(</span><span class="ss">&quot;MONGODB_URI&quot;</span><span class="p">),</span>
+<span class="w">     </span><span class="mi">15</span><span class="w">     </span><span class="n">serverSelectionTimeoutMS</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">second</span><span class="w"> </span><span class="n">timeout</span>
+<span class="w">     </span><span class="mi">16</span><span class="w">     </span><span class="n">socketTimeoutMS</span><span class="o">=</span><span class="mi">30000</span><span class="p">,</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="k">second</span><span class="w"> </span><span class="n">socket</span><span class="w"> </span><span class="n">timeout</span>
+<span class="w">     </span><span class="mi">17</span><span class="w">     </span><span class="n">connectTimeoutMS</span><span class="o">=</span><span class="mi">30000</span><span class="w">  </span><span class="err">#</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="k">second</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span><span class="n">timeout</span>
+<span class="w">     </span><span class="mi">18</span><span class="w"> </span><span class="p">)</span>
+<span class="c1">---&gt; 19 db = client[os.getenv(&quot;DB_NAME&quot;)]</span>
+<span class="w">     </span><span class="mi">20</span><span class="w"> </span><span class="n">comments_collection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">db</span><span class="o">[</span><span class="n">&#39;song_comments&#39;</span><span class="o">]</span>
+<span class="w">     </span><span class="mi">22</span><span class="w"> </span><span class="nv">@app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/store_comments&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">methods</span><span class="o">=[</span><span class="n">&#39;POST&#39;</span><span class="o">]</span><span class="p">)</span>
+<span class="w">     </span><span class="mi">23</span><span class="w"> </span><span class="n">def</span><span class="w"> </span><span class="n">store_comments</span><span class="p">()</span><span class="err">:</span>
+
+
+<span class="k">File</span><span class="w"> </span><span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">py312</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pymongo</span><span class="o">/</span><span class="n">mongo_client</span><span class="p">.</span><span class="nl">py</span><span class="p">:</span><span class="mi">1597</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">MongoClient</span><span class="p">.</span><span class="n">__getitem__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+<span class="w">   </span><span class="mi">1588</span><span class="w"> </span><span class="n">def</span><span class="w"> </span><span class="n">__getitem__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="nl">name</span><span class="p">:</span><span class="w"> </span><span class="nf">str</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">database</span><span class="p">.</span><span class="k">Database</span><span class="o">[</span><span class="n">_DocumentType</span><span class="o">]</span><span class="err">:</span>
+<span class="w">   </span><span class="mi">1589</span><span class="w">     </span><span class="ss">&quot;&quot;&quot;Get a database by name.</span>
+<span class="ss">   1590 </span>
+<span class="ss">   1591     Raises :class:`~pymongo.errors.InvalidName` if an invalid</span>
+<span class="ss">   (...)</span>
+<span class="ss">   1595       - `name`: the name of the database to get</span>
+<span class="ss">   1596     &quot;&quot;&quot;</span>
+<span class="o">-&gt;</span><span class="w"> </span><span class="mi">1597</span><span class="w">     </span><span class="k">return</span><span class="w"> </span><span class="k">database</span><span class="p">.</span><span class="k">Database</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">)</span>
+
+
+<span class="k">File</span><span class="w"> </span><span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">py312</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.12</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pymongo</span><span class="o">/</span><span class="k">database</span><span class="p">.</span><span class="nl">py</span><span class="p">:</span><span class="mi">137</span><span class="p">,</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">Database</span><span class="p">.</span><span class="n">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="w"> </span><span class="n">client</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">codec_options</span><span class="p">,</span><span class="w"> </span><span class="n">read_preference</span><span class="p">,</span><span class="w"> </span><span class="n">write_concern</span><span class="p">,</span><span class="w"> </span><span class="n">read_concern</span><span class="p">)</span>
+<span class="w">    </span><span class="mi">129</span><span class="w"> </span><span class="n">super</span><span class="p">().</span><span class="n">__init__</span><span class="p">(</span>
+<span class="w">    </span><span class="mi">130</span><span class="w">     </span><span class="n">codec_options</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">codec_options</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">131</span><span class="w">     </span><span class="n">read_preference</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">read_preference</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">132</span><span class="w">     </span><span class="n">write_concern</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">write_concern</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">133</span><span class="w">     </span><span class="n">read_concern</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">client</span><span class="p">.</span><span class="n">read_concern</span><span class="p">,</span>
+<span class="w">    </span><span class="mi">134</span><span class="w"> </span><span class="p">)</span>
+<span class="w">    </span><span class="mi">136</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="nf">str</span><span class="p">)</span><span class="err">:</span>
+<span class="c1">--&gt; 137     raise TypeError(&quot;name must be an instance of str&quot;)</span>
+<span class="w">    </span><span class="mi">139</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="ss">&quot;$external&quot;</span><span class="err">:</span>
+<span class="w">    </span><span class="mi">140</span><span class="w">     </span><span class="n">_check_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+
+
+<span class="nl">TypeError</span><span class="p">:</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">must</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nf">str</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p>
+<p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/song-comment-emmiter.html">song comment emmiter</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://MEERAN2314.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/misc.html">misc</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/song-comment-emmiter.html">song comment emmiter</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/MEERAN2314/">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by Meeran</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>

@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>My Python Notes - misc</title>
+    <title>My Python Notes</title>
 
     <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/normalize.css" />
     <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/foundation.min.css" />
@@ -45,6 +45,47 @@
         
         
 
+
+            <article>
+                <a href="https://MEERAN2314.github.io/pynotes/variables-and-data-types.html"><h3 class="article-title">Variables And Data Types</h3></a>
+<h6 class="subheader" title="2025-06-30T00:00:00-04:00">Mon 30 June 2025
+</h6>
+
+
+<div class="highlight"><pre><span></span><code><span class="n">integer_var</span> <span class="o">=</span> <span class="mi">42</span>
+<span class="n">float_var</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="n">string_var</span> <span class="o">=</span> <span class="s2">&quot;Hello, Python!&quot;</span>
+<span class="n">boolean_var</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">none_var</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">integer_var</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="n">float_var</span><span class="p">,</span> <span class="s2">&quot;converted to int:&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="n">float_var</span><span class="p">))</span>  
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">integer_var</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; is now a string&quot;</span><span class="p">)</span>  
+<span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">string_var</span><span class="p">))</span>
+
+<span class="k">if</span><span class="p">(</span><span class="n">boolean_var</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Its true&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Its false&quot;</span><span class="p">)</span>
+
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">&quot;three&quot;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>&lt;class &#39;int …</code></pre></div><p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a>
+
+</p>
+
+
+
+                <a class="button radius secondary small right" href="https://MEERAN2314.github.io/pynotes/variables-and-data-types.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
             <article>
                 <a href="https://MEERAN2314.github.io/pynotes/web-scraper-with-data-storage.html"><h3 class="article-title">Web Scraper With Data Storage</h3></a>
 <h6 class="subheader" title="2025-06-30T00:00:00-04:00">Mon 30 June 2025
@@ -64,46 +105,25 @@
 
     <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s2">&quot;quotes.db&quot;</span><span class="p">)</span>
     <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE IF NOT EXISTS quotes (text TEXT, author TEXT)&quot;</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">quote</span> <span class="ow">in</span> <span class="n">quotes</span><span class="p">:</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">quote</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
-        <span class="n">author</span> <span class="o">=</span> <span class="n">quote</span><span class="o">.</span><span class="n">find_next</span><span class="p">(</span><span class="s2">&quot;small&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
-        <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;INSERT INTO quotes VALUES (?, ?)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">author</span><span class="p">))</span>
-
-    <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
-    <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="n">scrape_quotes</span><span class="p">()</span>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>
-</code></pre></div>
-
-<hr>
-<p><strong>Score: 5</strong></p><p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/misc.html">misc</a>
+    <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;CREATE TABLE IF NOT EXISTS quotes (text TEXT, author …</span></code></pre></div><p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/misc.html">misc</a>
 
 </p>
 
 
 
+                <a class="button radius secondary small right" href="https://MEERAN2314.github.io/pynotes/web-scraper-with-data-storage.html">Read More</a>
+                <hr  class="gradient"/>
             </article>
 
+            <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 1 of 1</h6>
+<h6 class="subheader">Page 4 of 4</h6>
 
 <p>
+            <a href="https://MEERAN2314.github.io/pynotes/index3.html">&laquo; Prev</a>
 
 </p>
 </div>
-
-
-
-            <!-- /#posts-list -->
 
     </div>
     <!-- End Main Content -->

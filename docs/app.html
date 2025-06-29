@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>App</title>
+
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/normalize.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/style.css" />
+    <link rel="stylesheet" href="https://MEERAN2314.github.io/pynotes/theme/css/pygments.css" />	
+    <script src="https://MEERAN2314.github.io/pynotes/theme/js/modernizr.js"></script>
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+<div class="top-bar">
+<div class="row">
+    <div class="large-9 large-centered columns">
+	    <h1><a href="https://MEERAN2314.github.io/pynotes">My Python Notes</a></h1>
+    </div>
+</div>
+</div>
+
+<!-- Show menu items and pages -->
+<div class="row">
+<div class="large-9 columns">
+    <ul class="button-group navigation">
+
+    </ul>
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="https://MEERAN2314.github.io/pynotes/app.html" rel="bookmark"
+        title="Permalink to App">App</a></h3>
+    </header>
+
+<h6 class="subheader" title="2025-06-30T00:00:00-04:00">Mon 30 June 2025
+</h6>
+
+
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">streamlit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">st</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils.youtube_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">extract_video_id</span><span class="p">,</span> <span class="n">get_video_comments</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">utils.sentiment_analysis</span><span class="w"> </span><span class="kn">import</span> <span class="n">analyze_comment_sentiment</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="c1"># MCP Server URL</span>
+<span class="n">MCP_SERVER</span> <span class="o">=</span> <span class="s2">&quot;http://localhost:5000&quot;</span>
+
+<span class="c1"># Page config</span>
+<span class="n">st</span><span class="o">.</span><span class="n">set_page_config</span><span class="p">(</span>
+    <span class="n">page_title</span><span class="o">=</span><span class="s2">&quot;YouTube Song Comment Analyzer&quot;</span><span class="p">,</span>
+    <span class="n">page_icon</span><span class="o">=</span><span class="s2">&quot;🎵&quot;</span><span class="p">,</span>
+    <span class="n">layout</span><span class="o">=</span><span class="s2">&quot;wide&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># Custom CSS</span>
+<span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">&lt;style&gt;</span>
+<span class="s2">    .stProgress &gt; div &gt; div &gt; div &gt; div {</span>
+<span class="s2">        background-color: #1DB954;</span>
+<span class="s2">    }</span>
+<span class="s2">    .stTextInput &gt; div &gt; div &gt; input {</span>
+<span class="s2">        color: #1DB954;</span>
+<span class="s2">    }</span>
+<span class="s2">    .positive {</span>
+<span class="s2">        color: #1DB954;</span>
+<span class="s2">        background-color: #f0fff4;</span>
+<span class="s2">    }</span>
+<span class="s2">    .negative {</span>
+<span class="s2">        color: #FF0000;</span>
+<span class="s2">        background-color: #fff0f0;</span>
+<span class="s2">    }</span>
+<span class="s2">    .neutral {</span>
+<span class="s2">        color: #CCCCCC;</span>
+<span class="s2">        background-color: #f8f9fa;</span>
+<span class="s2">    }</span>
+<span class="s2">    .comment-box {</span>
+<span class="s2">        border-radius: 8px;</span>
+<span class="s2">        padding: 12px;</span>
+<span class="s2">        margin: 10px 0;</span>
+<span class="s2">        box-shadow: 0 1px 3px rgba(0,0,0,0.1);</span>
+<span class="s2">    }</span>
+<span class="s2">    .rating-badge {</span>
+<span class="s2">        padding: 3px 8px;</span>
+<span class="s2">        border-radius: 12px;</span>
+<span class="s2">        font-weight: bold;</span>
+<span class="s2">        font-size: 0.8em;</span>
+<span class="s2">    }</span>
+<span class="s2">&lt;/style&gt;</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span> <span class="n">unsafe_allow_html</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;🎵 YouTube Song Comment Analyzer&quot;</span><span class="p">)</span>
+    <span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="s2">&quot;Analyze sentiment of comments on any YouTube song&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Initialize session state for comments if not exists</span>
+    <span class="k">if</span> <span class="s1">&#39;analyzed_comments&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">if</span> <span class="s1">&#39;video_id&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="p">:</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">video_id</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+
+    <span class="c1"># Input section</span>
+    <span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">form</span><span class="p">(</span><span class="s2">&quot;input_form&quot;</span><span class="p">):</span>
+        <span class="n">youtube_url</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">text_input</span><span class="p">(</span><span class="s2">&quot;Enter YouTube Song URL&quot;</span><span class="p">,</span> <span class="n">placeholder</span><span class="o">=</span><span class="s2">&quot;https://www.youtube.com/watch?v=...&quot;</span><span class="p">)</span>
+        <span class="n">comment_limit</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span><span class="s2">&quot;Number of comments to analyze&quot;</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+        <span class="n">submit_button</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">form_submit_button</span><span class="p">(</span><span class="s2">&quot;Analyze Comments&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">submit_button</span> <span class="ow">and</span> <span class="n">youtube_url</span><span class="p">:</span>
+        <span class="n">video_id</span> <span class="o">=</span> <span class="n">extract_video_id</span><span class="p">(</span><span class="n">youtube_url</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">video_id</span><span class="p">:</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Invalid YouTube URL. Please enter a valid YouTube video URL.&quot;</span><span class="p">)</span>
+            <span class="k">return</span>
+
+        <span class="k">with</span> <span class="n">st</span><span class="o">.</span><span class="n">spinner</span><span class="p">(</span><span class="s2">&quot;Fetching and analyzing comments...&quot;</span><span class="p">):</span>
+            <span class="n">progress_bar</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">progress</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+            <span class="c1"># Step 1: Get comments from YouTube</span>
+            <span class="n">comments</span><span class="p">,</span> <span class="n">error</span> <span class="o">=</span> <span class="n">get_video_comments</span><span class="p">(</span><span class="n">video_id</span><span class="p">,</span> <span class="n">comment_limit</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">error</span><span class="p">:</span>
+                <span class="n">st</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error fetching comments: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">return</span>
+
+            <span class="n">progress_bar</span><span class="o">.</span><span class="n">progress</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+
+            <span class="c1"># Step 2: Analyze sentiment</span>
+            <span class="n">analyzed_comments</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">comment</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">comments</span><span class="p">):</span>
+                <span class="n">sentiment</span> <span class="o">=</span> <span class="n">analyze_comment_sentiment</span><span class="p">(</span><span class="n">comment</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+                <span class="n">analyzed_comments</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;song_id&#39;</span><span class="p">:</span> <span class="n">video_id</span><span class="p">,</span>
+                    <span class="s1">&#39;author&#39;</span><span class="p">:</span> <span class="n">comment</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;comment&#39;</span><span class="p">:</span> <span class="n">comment</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;likes&#39;</span><span class="p">:</span> <span class="n">comment</span><span class="p">[</span><span class="s1">&#39;likes&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;published_at&#39;</span><span class="p">:</span> <span class="n">comment</span><span class="p">[</span><span class="s1">&#39;published_at&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;sentiment&#39;</span><span class="p">:</span> <span class="n">sentiment</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;rating&#39;</span><span class="p">:</span> <span class="n">sentiment</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="n">sentiment</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+                <span class="p">})</span>
+                <span class="n">progress_bar</span><span class="o">.</span><span class="n">progress</span><span class="p">(</span><span class="mi">30</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="mi">40</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">comments</span><span class="p">)))</span>
+
+            <span class="n">progress_bar</span><span class="o">.</span><span class="n">progress</span><span class="p">(</span><span class="mi">80</span><span class="p">)</span>
+
+            <span class="c1"># Step 3: Store in MongoDB via MCP</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span>
+                    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">MCP_SERVER</span><span class="si">}</span><span class="s2">/store_comments&quot;</span><span class="p">,</span>
+                    <span class="n">json</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;comments&quot;</span><span class="p">:</span> <span class="n">analyzed_comments</span><span class="p">}</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">!=</span> <span class="mi">200</span><span class="p">:</span>
+                    <span class="n">st</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Comments couldn&#39;t be saved to database: </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">st</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Couldn&#39;t connect to database: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+            <span class="n">progress_bar</span><span class="o">.</span><span class="n">progress</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">progress_bar</span><span class="o">.</span><span class="n">empty</span><span class="p">()</span>
+
+            <span class="c1"># Store in session state</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span> <span class="o">=</span> <span class="n">analyzed_comments</span>
+            <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">video_id</span> <span class="o">=</span> <span class="n">video_id</span>
+
+            <span class="n">st</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Analyzed </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">analyzed_comments</span><span class="p">)</span><span class="si">}</span><span class="s2"> comments for video ID: </span><span class="si">{</span><span class="n">video_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Only show sorting and results if we have comments</span>
+    <span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span><span class="p">:</span>
+        <span class="c1"># Sorting options - using columns for better layout</span>
+        <span class="n">col1</span><span class="p">,</span> <span class="n">col2</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">columns</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+        <span class="k">with</span> <span class="n">col1</span><span class="p">:</span>
+            <span class="n">sort_option</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">selectbox</span><span class="p">(</span>
+                <span class="s2">&quot;Sort comments by&quot;</span><span class="p">,</span>
+                <span class="p">[</span><span class="s2">&quot;Highest Rating&quot;</span><span class="p">,</span> <span class="s2">&quot;Most Positive&quot;</span><span class="p">,</span> <span class="s2">&quot;Most Negative&quot;</span><span class="p">,</span> <span class="s2">&quot;Most Likes&quot;</span><span class="p">,</span> <span class="s2">&quot;Newest First&quot;</span><span class="p">],</span>
+                <span class="n">key</span><span class="o">=</span><span class="s2">&quot;sort_option&quot;</span>
+            <span class="p">)</span>
+
+        <span class="k">with</span> <span class="n">col2</span><span class="p">:</span>
+            <span class="n">display_limit</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">slider</span><span class="p">(</span>
+                <span class="s2">&quot;Number of comments to display&quot;</span><span class="p">,</span>
+                <span class="mi">5</span><span class="p">,</span> <span class="nb">min</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span><span class="p">)),</span> 
+                <span class="mi">10</span><span class="p">,</span>
+                <span class="n">key</span><span class="o">=</span><span class="s2">&quot;display_limit&quot;</span>
+            <span class="p">)</span>
+
+        <span class="c1"># Sort comments based on selection - doesn&#39;t trigger rerun</span>
+        <span class="k">if</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span><span class="p">:</span>
+            <span class="n">comments_to_display</span> <span class="o">=</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+            <span class="k">if</span> <span class="n">sort_option</span> <span class="o">==</span> <span class="s2">&quot;Highest Rating&quot;</span><span class="p">:</span>
+                <span class="n">comments_to_display</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">sort_option</span> <span class="o">==</span> <span class="s2">&quot;Most Positive&quot;</span><span class="p">:</span>
+                <span class="n">comments_to_display</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">sort_option</span> <span class="o">==</span> <span class="s2">&quot;Most Negative&quot;</span><span class="p">:</span>
+                <span class="n">comments_to_display</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">])</span>
+            <span class="k">elif</span> <span class="n">sort_option</span> <span class="o">==</span> <span class="s2">&quot;Most Likes&quot;</span><span class="p">:</span>
+                <span class="n">comments_to_display</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;likes&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">sort_option</span> <span class="o">==</span> <span class="s2">&quot;Newest First&quot;</span><span class="p">:</span>
+                <span class="n">comments_to_display</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;published_at&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Display comments</span>
+        <span class="n">st</span><span class="o">.</span><span class="n">subheader</span><span class="p">(</span><span class="s2">&quot;Comment Analysis Results&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">comment</span> <span class="ow">in</span> <span class="n">comments_to_display</span><span class="p">[:</span><span class="n">display_limit</span><span class="p">]:</span>
+            <span class="n">sentiment_class</span> <span class="o">=</span> <span class="n">comment</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span>
+            <span class="n">rating_color</span> <span class="o">=</span> <span class="s2">&quot;#1DB954&quot;</span> <span class="k">if</span> <span class="n">comment</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">7</span> <span class="k">else</span> <span class="s2">&quot;#FF0000&quot;</span> <span class="k">if</span> <span class="n">comment</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">4</span> <span class="k">else</span> <span class="s2">&quot;#FFA500&quot;</span>
+
+            <span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            &lt;div class=&quot;comment-box </span><span class="si">{</span><span class="n">sentiment_class</span><span class="si">}</span><span class="s2">&quot;&gt;</span>
+<span class="s2">                &lt;div style=&quot;display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;&quot;&gt;</span>
+<span class="s2">                    &lt;div style=&quot;font-weight: bold; font-size: 1.1em;&quot;&gt;</span><span class="si">{</span><span class="n">comment</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/div&gt;</span>
+<span class="s2">                    &lt;div class=&quot;rating-badge&quot; style=&quot;background-color: </span><span class="si">{</span><span class="n">rating_color</span><span class="si">}</span><span class="s2">; color: white;&quot;&gt;</span>
+<span class="s2">                        </span><span class="si">{</span><span class="n">comment</span><span class="p">[</span><span class="s1">&#39;rating&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/10</span>
+<span class="s2">                    &lt;/div&gt;</span>
+<span class="s2">                &lt;/div&gt;</span>
+<span class="s2">                &lt;p style=&quot;margin: 8px 0; font-size: 0.95em;&quot;&gt;</span><span class="si">{</span><span class="n">comment</span><span class="p">[</span><span class="s1">&#39;comment&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/p&gt;</span>
+<span class="s2">                &lt;div style=&quot;display: flex; justify-content: space-between; font-size: 0.8em; color: #666;&quot;&gt;</span>
+<span class="s2">                    &lt;span&gt;👍 </span><span class="si">{</span><span class="n">comment</span><span class="p">[</span><span class="s1">&#39;likes&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> likes&lt;/span&gt;</span>
+<span class="s2">                    &lt;span class=&quot;</span><span class="si">{</span><span class="n">sentiment_class</span><span class="si">}</span><span class="s2">&quot; style=&quot;font-weight: bold;&quot;&gt;</span><span class="si">{</span><span class="n">sentiment_class</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span><span class="si">}</span><span class="s2"> sentiment (</span><span class="si">{</span><span class="n">comment</span><span class="p">[</span><span class="s1">&#39;sentiment&#39;</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">)&lt;/span&gt;</span>
+<span class="s2">                    &lt;span&gt;</span><span class="si">{</span><span class="n">comment</span><span class="p">[</span><span class="s1">&#39;published_at&#39;</span><span class="p">][:</span><span class="mi">10</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/span&gt;</span>
+<span class="s2">                &lt;/div&gt;</span>
+<span class="s2">            &lt;/div&gt;</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">unsafe_allow_html</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+        <span class="c1"># Show statistics</span>
+        <span class="n">positive_count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span> <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;positive&#39;</span><span class="p">)</span>
+        <span class="n">negative_count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span> <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;negative&#39;</span><span class="p">)</span>
+        <span class="n">neutral_count</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span> <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;neutral&#39;</span><span class="p">)</span>
+
+        <span class="n">st</span><span class="o">.</span><span class="n">markdown</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        &lt;div style=&quot;margin-top: 20px; padding: 15px; background-color: #f8f9fa; border-radius: 8px;&quot;&gt;</span>
+<span class="s2">            &lt;h4 style=&quot;margin-top: 0;&quot;&gt;Overall Sentiment Distribution&lt;/h4&gt;</span>
+<span class="s2">            &lt;div style=&quot;display: flex; justify-content: space-between;&quot;&gt;</span>
+<span class="s2">                &lt;span class=&quot;positive&quot;&gt;Positive: </span><span class="si">{</span><span class="n">positive_count</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">positive_count</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&lt;/span&gt;</span>
+<span class="s2">                &lt;span class=&quot;neutral&quot;&gt;Neutral: </span><span class="si">{</span><span class="n">neutral_count</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">neutral_count</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&lt;/span&gt;</span>
+<span class="s2">                &lt;span class=&quot;negative&quot;&gt;Negative: </span><span class="si">{</span><span class="n">negative_count</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">negative_count</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">st</span><span class="o">.</span><span class="n">session_state</span><span class="o">.</span><span class="n">analyzed_comments</span><span class="p">)</span><span class="o">*</span><span class="mi">100</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">%)&lt;/span&gt;</span>
+<span class="s2">            &lt;/div&gt;</span>
+<span class="s2">        &lt;/div&gt;</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">,</span> <span class="n">unsafe_allow_html</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code><span class="o">---------------------------------------------------------------------------</span>
+
+<span class="ne">ModuleNotFoundError</span>                       <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+      <span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">streamlit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">st</span>
+      <span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="o">----&gt;</span> <span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">utils.youtube_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">extract_video_id</span><span class="p">,</span> <span class="n">get_video_comments</span>
+      <span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">utils.sentiment_analysis</span><span class="w"> </span><span class="kn">import</span> <span class="n">analyze_comment_sentiment</span>
+      <span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+
+
+<span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;utils&#39;</span>
+</code></pre></div>
+
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<hr>
+<p><strong>Score: 0</strong></p>
+<p class="subheader">Category: <a href="https://MEERAN2314.github.io/pynotes/category/song-comment-emmiter.html">song comment emmiter</a>
+
+</p>
+
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/archives.html">Archives</a>
+            <li><a href="https://MEERAN2314.github.io/pynotes/tags.html">Tags</a>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/basics.html">basics</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/misc.html">misc</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/pandas-work.html">pandas-work</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/python-basics.html">Python basics</a></li>
+            <li><a href="https://MEERAN2314.github.io/pynotes/category/song-comment-emmiter.html">song comment emmiter</a></li>
+   
+        </ul>
+
+		
+        <h5 class="sidebar-title">Social</h5>
+        <ul class="side-nav">
+            <li><a href="https://github.com/MEERAN2314/">GitHub</a></li>
+            <li><a href="<linkedin handle>">LinkedIn</a></li>
+        </ul>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-6 columns">
+              <!--                  <p>My Python Notes by Meeran</p> -->
+            </div>
+            </div>
+    </div>
+</footer>
+</body>
+</html>
